@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %} 
+    My Blog 
+{% endblock%} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/index.css' %}">
+<link rel="stylesheet" href="{% static 'blog/post.css' %}">
+{% endblock css_files %}
+  
+
+
+
+{% block content %}
+
+
+  <section id = "welcome">
+    <header>
+      <img src="{% static 'blog/images/IMG_2545.JPG' %}" alt="Roni - The Author of this blog">
+      <h2>RJV BLOG</h2>
+    </header>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum fugiat optio expedita tempora, fugit vero sed, mollitia perspiciatis ratione culpa inventore tempore. Repellat unde natus repudiandae quibusdam, eos a voluptas?</p>
+  </section>
+
+  <section id ="latest-posts">
+    <h2>My latest Thouhghts</h2>
+    <ul>
+      {% for post in posts %}
+        {% include 'blog/include/post.html' %}
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>What I Do</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, doloremque nobis dignissimos, nam nulla tempora quisquam iusto natus odit beatae suscipit optio quia commodi consequuntur adipisci ratione quibusdam illo unde!</p>
+  </section>
+
+{% endblock%}
